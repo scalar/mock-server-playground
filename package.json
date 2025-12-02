@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite-node server/index.ts"
+    "dev": "nodemon --quiet --watch server --watch documents --exec vite-node server/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,9 @@
     "@hono/node-server": "^1.19.6",
     "@scalar/mock-server": "^0.7.2",
     "vite-node": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "nodemon": "^3.1.11"
   }
 }
