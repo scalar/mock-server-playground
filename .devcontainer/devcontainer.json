@@ -11,8 +11,9 @@
     "customizations": {
       "vscode": {
         "extensions": [
-          "42Crunch.vscode-openapi",
-          "rangav.vscode-thunder-client"
+            "42Crunch.vscode-openapi",
+            "rangav.vscode-thunder-client",
+            "GitHub.copilot-chat"
         ]
       }
     },
