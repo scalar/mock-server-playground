@@ -1,0 +1,24 @@
+// For details, see https://aka.ms/devcontainer.json.
+{
+    "name": "Scalar",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+      "ghcr.io/devcontainers/features/node:1": {
+        "version": "22",
+        "pnpmVersion": "10.16.1"
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "42Crunch.vscode-openapi"
+        ]
+      }
+    },
+    "hostRequirements": {
+      "memory": "8gb",
+      "cpus": 4
+    },
+    "postCreateCommand": "pnpm install",
+    "postAttachCommand": "pnpm dev &"
+  }
