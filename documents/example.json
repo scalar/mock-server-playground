@@ -1,5 +1,5 @@
 {
-  "openapi": "3.1.2",
+  "openapi": "3.0.0",
   "info": {
     "title":"Example API",
     "version":"0.1.0"
@@ -12,7 +12,12 @@
   "paths": {
     "/foobar": {
       "get": {
-        "summary": "Just testing"
+        "summary": "Just testing",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
       }
     }
   }
