@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --quiet --watch server --watch documents --exec vite-node server/index.ts"
+    "dev": "nodemon --quiet --watch server --watch documents --ext yaml,json,ts --exec vite-node server/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +12,8 @@
   "packageManager": "pnpm@10.10.0",
   "dependencies": {
     "@hono/node-server": "^1.19.6",
-    "@scalar/mock-server": "^0.7.2",
+    "@scalar/hono-api-reference": "^0.9.26",
+    "@scalar/mock-server": "^0.8.0",
     "vite-node": "^5.2.0"
   },
   "devDependencies": {
