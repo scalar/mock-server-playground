@@ -5,10 +5,9 @@
 [![Twitter](https://img.shields.io/twitter/follow/scalar)](https://x.com/scalar)
 [![Discord](https://img.shields.io/discord/1135330207960678410?style=flat&color=5865F2)](https://discord.gg/scalar)
 
-🚧 WIP 🚧
-
-* Play with the Scalar Mock Server
-* Run the whole setup in your browser
+* Experiment with the Scalar Mock Server
+* Test endpoints with mock responses
+* Run everything in your browser via GitHub Codespaces
 
 ## Workshop
 
