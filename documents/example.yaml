@@ -98,6 +98,17 @@ paths:
         '404':
           description: Post not found
 components:
+  securitySchemes:
+    oAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: /oauth/authorize
+          tokenUrl: /oauth/token
+          scopes:
+            read: Read access
+            write: Write access
+            admin: Admin access
   schemas:
     Post:
       type: object
