@@ -1,0 +1,280 @@
+openapi: 3.0.0
+info:
+  title: Tamagotchi API
+  version: 1.0.0
+  description: |
+    A simple Tamagotchi-style virtual pet API. Create pets, perform actions (feed, play, sleep),
+    and query their status. Includes `x-seed` to generate sample pets when used with the mock server.
+paths:
+  /pets:
+    get:
+      summary: List all pets
+      operationId: listPets
+      x-handler: |
+        return store.list('Tamagotchi')
+      responses:
+        '200':
+          description: List of pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tamagotchi'
+
+    post:
+      summary: Create a new pet
+      operationId: createPet
+      x-handler: |
+        return store.create('Tamagotchi', {
+          id: faker.string.uuid(),
+          name: req.body.name,
+          species: req.body.species || faker.helpers.arrayElement(['Cat','Dog','Dragon','Alien']),
+          hunger: 20,
+          happiness: 80,
+          energy: 80,
+          isAlive: true,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString()
+        })
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewTamagotchi'
+      responses:
+        '201':
+          description: Pet created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tamagotchi'
+
+  /pets/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    get:
+      summary: Get a pet by ID
+      operationId: getPet
+      x-handler: |
+        return store.get('Tamagotchi', req.params.id)
+      responses:
+        '200':
+          description: Pet found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tamagotchi'
+        '404':
+          description: Pet not found
+
+    put:
+      summary: Update a pet
+      operationId: updatePet
+      x-handler: |
+        return store.update('Tamagotchi', req.params.id, {
+          ...req.body,
+          updatedAt: new Date().toISOString()
+        })
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTamagotchi'
+      responses:
+        '200':
+          description: Pet updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tamagotchi'
+        '404':
+          description: Pet not found
+
+    delete:
+      summary: Delete a pet
+      operationId: deletePet
+      x-handler: |
+        return store.delete('Tamagotchi', req.params.id)
+      responses:
+        '204':
+          description: Pet deleted
+        '404':
+          description: Pet not found
+
+  /pets/{id}/actions:
+    post:
+      summary: Perform an action on a pet (feed/play/sleep/pet)
+      operationId: actOnPet
+      x-handler: |
+        const pet = store.get('Tamagotchi', req.params.id)
+        if (!pet) return null
+
+        const { action, amount } = req.body || {}
+        const qty = typeof amount === 'number' ? amount : 1
+
+        if (!pet.isAlive) {
+          throw new Error('Pet is not alive')
+        }
+
+        switch (action) {
+          case 'feed':
+            pet.hunger = Math.max(0, pet.hunger - qty * 10)
+            pet.energy = Math.min(100, pet.energy + qty * 5)
+            break
+          case 'play':
+            pet.happiness = Math.min(100, pet.happiness + qty * 10)
+            pet.energy = Math.max(0, pet.energy - qty * 15)
+            pet.hunger = Math.min(100, pet.hunger + qty * 10)
+            break
+          case 'sleep':
+            pet.energy = Math.min(100, pet.energy + qty * 20)
+            pet.hunger = Math.min(100, pet.hunger + qty * 5)
+            break
+          case 'pet':
+            pet.happiness = Math.min(100, pet.happiness + qty * 5)
+            break
+          default:
+            throw new Error('Invalid action')
+        }
+
+        // dying conditions
+        if (pet.hunger >= 100 || pet.energy <= 0) {
+          pet.isAlive = false
+        }
+
+        pet.updatedAt = new Date().toISOString()
+        return store.update('Tamagotchi', req.params.id, pet)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActionRequest'
+      responses:
+        '200':
+          description: Pet updated after action
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tamagotchi'
+        '400':
+          description: Invalid action
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Pet not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Tamagotchi:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        species:
+          type: string
+          description: Species or type of pet
+        hunger:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: 0 = full, 100 = starving
+        happiness:
+          type: integer
+          minimum: 0
+          maximum: 100
+        energy:
+          type: integer
+          minimum: 0
+          maximum: 100
+        isAlive:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      x-seed: |
+        seed.count(5, () => ({
+          id: faker.string.uuid(),
+          name: faker.person.firstName(),
+          species: faker.helpers.arrayElement(['Cat', 'Dog', 'Dragon', 'Alien']),
+          hunger: faker.number.int({ min: 0, max: 80 }),
+          happiness: faker.number.int({ min: 20, max: 100 }),
+          energy: faker.number.int({ min: 10, max: 100 }),
+          isAlive: true,
+          createdAt: faker.date.past().toISOString(),
+          updatedAt: faker.date.recent().toISOString()
+        }))
+
+    NewTamagotchi:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        species:
+          type: string
+
+    UpdateTamagotchi:
+      type: object
+      properties:
+        name:
+          type: string
+        species:
+          type: string
+        hunger:
+          type: integer
+          minimum: 0
+          maximum: 100
+        happiness:
+          type: integer
+          minimum: 0
+          maximum: 100
+        energy:
+          type: integer
+          minimum: 0
+          maximum: 100
+
+    ActionRequest:
+      type: object
+      required:
+        - action
+      properties:
+        action:
+          type: string
+          description: One of `feed`, `play`, `sleep`, `pet`
+          enum:
+            - feed
+            - play
+            - sleep
+            - pet
+        amount:
+          type: integer
+          description: Optional magnitude for the action (e.g., food amount, play time)
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
