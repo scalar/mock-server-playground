@@ -15,7 +15,7 @@ const app = await createMockServer({
   },
 })
 
-app.get('/', Scalar({ url: '/openapi.yaml' }))
+app.get('/', Scalar({ url: '/openapi.yaml', cdn: 'https://cdn.jsdelivr.net/npm/@scalar/api-reference@1.40.2' }))
 
 // Start the server
 serve(

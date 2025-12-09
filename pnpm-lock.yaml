@@ -9,21 +9,21 @@ importers:
   .:
     dependencies:
       '@hono/node-server':
-        specifier: ^1.19.6
-        version: 1.19.6(hono@4.10.3)
+        specifier: ^1.19.7
+        version: 1.19.7(hono@4.10.3)
       '@scalar/hono-api-reference':
-        specifier: ^0.9.26
-        version: 0.9.26(hono@4.10.3)
+        specifier: ^0.9.27
+        version: 0.9.27(hono@4.10.3)
       '@scalar/mock-server':
-        specifier: ^0.8.0
-        version: 0.8.0
+        specifier: ^0.8.1
+        version: 0.8.1
       vite-node:
         specifier: ^5.2.0
-        version: 5.2.0(@types/node@24.10.1)(yaml@2.8.0)
+        version: 5.2.0(@types/node@24.10.2)(yaml@2.8.0)
     devDependencies:
       '@types/node':
-        specifier: ^24.10.1
-        version: 24.10.1
+        specifier: ^24.10.2
+        version: 24.10.2
       nodemon:
         specifier: ^3.1.11
         version: 3.1.11
@@ -207,8 +207,8 @@ packages:
     resolution: {integrity: sha512-OEl393iCOoo/z8bMezRlJu+GlRGlsKbUAN7jKB6LhnKoqKve5DXRpalbItIIcwnCjs1k/FOPjFzcA6Qn+H+YbA==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
 
-  '@hono/node-server@1.19.6':
-    resolution: {integrity: sha512-Shz/KjlIeAhfiuE93NDKVdZ7HdBVLQAfdbaXEaoAVO3ic9ibRSLGIQGkcBbFyuLr+7/1D5ZCINM8B+6IvXeMtw==}
+  '@hono/node-server@1.19.7':
+    resolution: {integrity: sha512-vUcD0uauS7EU2caukW8z5lJKtoGMokxNbJtBiwHgpqxEXokaHCBkQUmCHhjFB1VUTWdqj25QoMkMKzgjq+uhrw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
@@ -330,38 +330,38 @@ packages:
     resolution: {integrity: sha512-oYb3UNCa1rDEXwqYrs9w+Ra68urw/OasxUTb+AlTfa/RjSFmluJWdv21Mgl7k/kv6XGbmIW36xsAdItuBQ/iPw==}
     engines: {node: '>=20'}
 
-  '@scalar/core@0.3.24':
-    resolution: {integrity: sha512-8d/xcjcExGRAzg+49peLIjP1XyDKyuJlJXx0J6Zy6k3gFHjA/2o98FhZRBVvVCvzeFKTfz3hg2CQHrm50JonBA==}
+  '@scalar/core@0.3.25':
+    resolution: {integrity: sha512-bbdkH17+0nArlrEHEyf/xNCPcnvjghkFmi7xz989k16SaaLZBn962WWG0ODPQUetK1anmv8nnfzufZJYZuGR/g==}
     engines: {node: '>=20'}
 
-  '@scalar/helpers@0.1.3':
-    resolution: {integrity: sha512-ehIYd2xcOm3QCczn63kAl8CcVTnFLfQIx7dmpZV4b4G+hPWfW62rxvXV6yZ4TkUdWDl+kddjNoX4aWBwqwgBRQ==}
+  '@scalar/helpers@0.2.0':
+    resolution: {integrity: sha512-j5jAdEZgAKppTkL8YkwMs7qlwWf3h2Pw/tgHUYsBpG7581wV+wWR68AM1YWAtWQrqPhX+UkMV1KUyvFXB8/6Xg==}
     engines: {node: '>=20'}
 
-  '@scalar/hono-api-reference@0.9.26':
-    resolution: {integrity: sha512-QcGTQ5vXu5f3W1ZmofdSHYqKMCPwQgBLuhAQSPRpaW3+G0XDI7ZYImqKoXzrgHp3PNGn2xTV9oYbTNmLHbfbOA==}
+  '@scalar/hono-api-reference@0.9.27':
+    resolution: {integrity: sha512-+puF9ZqiZU4YvP+sOJJji/9OVA1G6ksvjN+5M1axA4rEMEUWUGLr6xV1DU+v/Or77ySU2X+zY0HpVzsWsbt1Gw==}
     engines: {node: '>=20'}
     peerDependencies:
       hono: ^4.10.3
 
-  '@scalar/json-magic@0.8.3':
-    resolution: {integrity: sha512-YS0s8DuqRnwkvtTVmYd8LwN70Xy5vEtOioooS2FgxAXtwTvWjPS+eu5bLsiXXLmbgU+2gMw6Fh5zKdb8SHsbGw==}
+  '@scalar/json-magic@0.8.4':
+    resolution: {integrity: sha512-n1Es2PlwCD1aTGbBXDk5KEADIPRY0Fc/V3+jOGlWCJ+5FAjl69R8qNvXMb/twhqa8AMz0vY4iLHa2QOrsVoMvw==}
     engines: {node: '>=20'}
 
-  '@scalar/mock-server@0.8.0':
-    resolution: {integrity: sha512-pUw+kbN8jPLq2v/WfXELaQoldecuu7OqM7NPE2ZYroUBpmRRg2RDSf9ZtWjL6IXbW2bwC0Oj5jl6cTuq6RHkgA==}
+  '@scalar/mock-server@0.8.1':
+    resolution: {integrity: sha512-szL24wsyr0wvrYbvZooWQ3CDwEFb4ojIfG86tdCNLo1EVN87006U4YjXfho9BwN24+36R5UiExu0N1Jl1DM0qg==}
     engines: {node: '>=20'}
 
-  '@scalar/oas-utils@0.6.5':
-    resolution: {integrity: sha512-GAzSL5Hycxd+TigHdf/nyF8JgKPyiS0fM5IG4HLgiJT3zxA8AlZtMaF1I75uvXaj6KvcP2/QfkK2r9w8x1nIoQ==}
+  '@scalar/oas-utils@0.6.6':
+    resolution: {integrity: sha512-rW2JeqBF6DSOChkF/sy7QHjNYNAgMAqOVzalBFsYsw9MXvAJud7rwc6bQQQXeRg9kzDzZmgth3697QIzlgVKPw==}
     engines: {node: '>=20'}
 
-  '@scalar/object-utils@1.2.13':
-    resolution: {integrity: sha512-3cEvjFayKpLGjyKCGJGhcAoAZpcIG3h0dzDk6+vshnuxzZxTJXb02K+hdQIqHmDNbQKDtTlFlnowE4NXFy6P1Q==}
+  '@scalar/object-utils@1.2.14':
+    resolution: {integrity: sha512-VzfDdQNxO7xr61lZJ6or9JTj5HmW8/k/uNf6bRcYAPz/8Rd8LNXL4o576WT6I1vEDdFjzHAJ5UDZtjX4B93GbA==}
     engines: {node: '>=20'}
 
-  '@scalar/openapi-parser@0.23.4':
-    resolution: {integrity: sha512-Fdv1p/83Hc7gWVufUnTTR+9XW/CQo5wa1asVzJjI8Qbu1Hwut0y2p2oOtznz4JBdPh9Q3Y0DWqRXECwqovjmEQ==}
+  '@scalar/openapi-parser@0.23.5':
+    resolution: {integrity: sha512-9e+sNcPSTF7mSXEt+lUzoEx9VhtDHpNYE9rJALB/ZF8B9+mbWcDM5xnHG73pBSYCEkhYNJgQkD5m8nLJEbLUWA==}
     engines: {node: '>=20'}
 
   '@scalar/openapi-types@0.5.2':
@@ -387,8 +387,8 @@ packages:
     resolution: {integrity: sha512-+BSZlfDc5tqFnB+MEJ16o5x86PkKfRK4UYgEv9T5LYmaGmStZF110GoYNbUW6lWRmjFzdPyqS8S7Tijwqd7hXA==}
     engines: {node: '>=20'}
 
-  '@scalar/workspace-store@0.22.0':
-    resolution: {integrity: sha512-kLo9qIriB5y6zHSPTvzf83I4rC1PYVdZsbDvs8u0JxlpxjtKRAXFMRduVXZhVYAKPRIRuBP2Jbh3U6YNTXWwTA==}
+  '@scalar/workspace-store@0.22.1':
+    resolution: {integrity: sha512-H73KoPn1B+YEsc8lU+JiHggkdemOyILz5kE6ZOo+fyLC2IPFNoxXixxWc/YcVhKiZzXMDRNtKLK37km0TBwGLQ==}
     engines: {node: '>=18'}
 
   '@types/debug@4.1.12':
@@ -406,8 +406,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@24.10.1':
-    resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
+  '@types/node@24.10.2':
+    resolution: {integrity: sha512-WOhQTZ4G8xZ1tjJTvKOpyEVSGgOTvJAfDK3FNFgELyaTpzhdgHVHeqW8V+UJvzF5BT+/B54T/1S2K6gd9c7bbA==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -1205,7 +1205,7 @@ snapshots:
 
   '@faker-js/faker@9.9.0': {}
 
-  '@hono/node-server@1.19.6(hono@4.10.3)':
+  '@hono/node-server@1.19.7(hono@4.10.3)':
     dependencies:
       hono: 4.10.3
 
@@ -1298,29 +1298,29 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@scalar/core@0.3.24':
+  '@scalar/core@0.3.25':
     dependencies:
       '@scalar/types': 0.5.1
 
-  '@scalar/helpers@0.1.3': {}
+  '@scalar/helpers@0.2.0': {}
 
-  '@scalar/hono-api-reference@0.9.26(hono@4.10.3)':
+  '@scalar/hono-api-reference@0.9.27(hono@4.10.3)':
     dependencies:
-      '@scalar/core': 0.3.24
+      '@scalar/core': 0.3.25
       hono: 4.10.3
 
-  '@scalar/json-magic@0.8.3':
+  '@scalar/json-magic@0.8.4':
     dependencies:
-      '@scalar/helpers': 0.1.3
+      '@scalar/helpers': 0.2.0
       yaml: 2.8.0
 
-  '@scalar/mock-server@0.8.0':
+  '@scalar/mock-server@0.8.1':
     dependencies:
       '@faker-js/faker': 9.9.0
-      '@scalar/helpers': 0.1.3
-      '@scalar/json-magic': 0.8.3
-      '@scalar/oas-utils': 0.6.5
-      '@scalar/openapi-parser': 0.23.4
+      '@scalar/helpers': 0.2.0
+      '@scalar/json-magic': 0.8.4
+      '@scalar/oas-utils': 0.6.6
+      '@scalar/openapi-parser': 0.23.5
       '@scalar/openapi-types': 0.5.2
       '@scalar/openapi-upgrader': 0.1.5
       hono: 4.10.3
@@ -1328,15 +1328,15 @@ snapshots:
       - supports-color
       - typescript
 
-  '@scalar/oas-utils@0.6.5':
+  '@scalar/oas-utils@0.6.6':
     dependencies:
-      '@scalar/helpers': 0.1.3
-      '@scalar/json-magic': 0.8.3
-      '@scalar/object-utils': 1.2.13
+      '@scalar/helpers': 0.2.0
+      '@scalar/json-magic': 0.8.4
+      '@scalar/object-utils': 1.2.14
       '@scalar/openapi-types': 0.5.2
       '@scalar/themes': 0.13.25
       '@scalar/types': 0.5.1
-      '@scalar/workspace-store': 0.22.0
+      '@scalar/workspace-store': 0.22.1
       flatted: 3.3.3
       type-fest: 5.0.0
       yaml: 2.8.0
@@ -1345,16 +1345,16 @@ snapshots:
       - supports-color
       - typescript
 
-  '@scalar/object-utils@1.2.13':
+  '@scalar/object-utils@1.2.14':
     dependencies:
-      '@scalar/helpers': 0.1.3
+      '@scalar/helpers': 0.2.0
       flatted: 3.3.3
       just-clone: 6.2.0
       ts-deepmerge: 7.0.3
 
-  '@scalar/openapi-parser@0.23.4':
+  '@scalar/openapi-parser@0.23.5':
     dependencies:
-      '@scalar/json-magic': 0.8.3
+      '@scalar/json-magic': 0.8.4
       '@scalar/openapi-types': 0.5.2
       '@scalar/openapi-upgrader': 0.1.5
       ajv: 8.17.1
@@ -1390,12 +1390,12 @@ snapshots:
       type-fest: 5.0.0
       zod: 4.1.11
 
-  '@scalar/workspace-store@0.22.0':
+  '@scalar/workspace-store@0.22.1':
     dependencies:
       '@scalar/code-highlight': 0.2.1
-      '@scalar/helpers': 0.1.3
-      '@scalar/json-magic': 0.8.3
-      '@scalar/object-utils': 1.2.13
+      '@scalar/helpers': 0.2.0
+      '@scalar/json-magic': 0.8.4
+      '@scalar/object-utils': 1.2.14
       '@scalar/openapi-upgrader': 0.1.5
       '@scalar/snippetz': 0.5.4
       '@scalar/themes': 0.13.25
@@ -1425,7 +1425,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@24.10.1':
+  '@types/node@24.10.2':
     dependencies:
       undici-types: 7.16.0
 
@@ -2386,13 +2386,13 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-node@5.2.0(@types/node@24.10.1)(yaml@2.8.0):
+  vite-node@5.2.0(@types/node@24.10.2)(yaml@2.8.0):
     dependencies:
       cac: 6.7.14
       es-module-lexer: 1.7.0
       obug: 2.1.1
       pathe: 2.0.3
-      vite: 7.2.6(@types/node@24.10.1)(yaml@2.8.0)
+      vite: 7.2.6(@types/node@24.10.2)(yaml@2.8.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -2406,7 +2406,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite@7.2.6(@types/node@24.10.1)(yaml@2.8.0):
+  vite@7.2.6(@types/node@24.10.2)(yaml@2.8.0):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -2415,7 +2415,7 @@ snapshots:
       rollup: 4.53.3
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 24.10.2
       fsevents: 2.3.3
       yaml: 2.8.0
 
